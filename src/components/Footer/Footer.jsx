@@ -100,7 +100,7 @@ const Footer = () => {
             </span>
 
             <span>
-              Social and Park Development
+              Society and Park Development
             </span>
 
           </div>

@@ -50,7 +50,7 @@ const Services = () => {
 
                 {
             number :"07",
-            title:"Social and Park Development",
+            title:"Society and Park Development",
                         description:"We develop modern social spaces and parks with thoughtful planning, durable construction, green landscapes, and community-focused designs that create welcoming environments for people to connect, relax, and grow.",
 
             image:"https://images.pexels.com/photos/38772834/pexels-photo-38772834.jpeg"

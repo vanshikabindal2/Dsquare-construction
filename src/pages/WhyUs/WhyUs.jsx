@@ -1,111 +1,405 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import './WhyUs.css'
+import "./WhyUs.css";
 
-const reason=[
-    {number:"01",
-        title:"Quality First",
-        text:"We focus on quality materials, skilled workmanship and proper finishing in every project",
-    },
-       {number:"02",
-        title:"Experienced Team",
-        text:"Our experienced team brings skilled expertise, practical knowledge, and dedicated effort to deliver every project with confidence.",
-    },
-       {number:"03",
-        title:"Clear Communication",
-        text:"We keep communication simple, honest, and transparent, ensuring every decision, update, and detail is clearly understood.",
-    },
-       {number:"04",
-        title:"Built To Last",
-        text: "Built to last with quality materials, expert craftsmanship, and thoughtful designs that stand strong for years.",
-    },
-]
+/* =========================================================
+   COUNTER COMPONENT
+========================================================= */
+
+const Counter = ({ end, suffix }) => {
+  const [count, setCount] = useState(1);
+  const [started, setStarted] = useState(false);
+
+  const counterRef = useRef(null);
+
+  /* Start counter when it enters viewport */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  /* Counter animation */
+  useEffect(() => {
+    if (!started) return;
+
+    let current = 1;
+
+    const timer = setInterval(() => {
+      current += 1;
+
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(current);
+      }
+    }, 25);
+
+    return () => clearInterval(timer);
+  }, [started, end]);
+
+  return (
+    <span ref={counterRef}>
+      {count}
+      {count === end && suffix}
+    </span>
+  );
+};
+
+
+/* =========================================================
+   WHY US PAGE
+========================================================= */
+
 const WhyUs = () => {
   return (
-    <main className='why-page'>
-        <section className='why-intro'>
-            <div className='why-intro-left'>
-                <span className='why-label'>Why D SQUARE</span>
-                <h1>More Than <br/><span>Construction</span></h1>
-            </div>
+    <div className="why-page">
 
-            <div className='why-intro-right'>
-                <p>We believe good construction is not only about putting materials together. It is about creating spaces that people can trust, use and enjoy for years to come.</p>
-            </div>
-        </section>
+      {/* =====================================================
+          INTRO SECTION
+      ===================================================== */}
 
-        <section className='why-feature'>
-            <div className='why-feature-image'>
-                <img src="https://plus.unsplash.com/premium_photo-1682724602925-f0264b85953f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-            </div>
+      <section className="why-intro">
 
-<div className='why-feature-content'>
-    <span className='why-small-label'>OUR APPROACH</span>
-    <h2>We build with <span>purpose.</span></h2>
-    <p>Started the project by understanding the client’s actual needs, business objectives, and target audience. Focused on creating a professional, responsive, and user-friendly construction website that clearly presents services, builds trust, showcases projects, and helps potential customers connect easily.
-</p>
+        <div className="why-intro-left">
 
-<div className='why-sign'><span>D square </span> <small>CONSTRUCTION</small></div>
-</div>
-        </section>
+          <span className="why-label">
+            Why D Square
+          </span>
 
+          <h1>
+            Built with
+            <br />
+            <span>purpose.</span>
+          </h1>
 
-{/* REASONS */}
-
-<section className='why-reasons'>
-    <div className='why-reasons-heading'>
-        <span className='why-small-label'>WHAT SETS US APART</span>
-        <h2>Why Clients <br /><span>choose us.</span></h2>
-    </div>
-
-    <div className='reasons-list'>{reason.map((reason)=>(
-        <div className='reason-item' key={reason.number}>
-                    <span className='reason-number'>{reason.number}</span>
-                    <div className='reason-content'>
-                        <h3>{reason.title}</h3>
-                        <p>{reason.text}</p>
-                    </div>
-                    <span className='reason-arrow'><FiArrowUpRight/></span>
         </div>
-) )}</div>
-</section>
 
-<section className="why-numbers">
-  <div className="why-ticker">
+        <div className="why-intro-right">
 
-    <div className="why-ticker-content">
+          <p>
+            We believe good construction is more than just
+            building structures. It is about creating spaces
+            that are thoughtfully designed, carefully built,
+            and made to last for generations.
+          </p>
 
-      <span>15+ Years Experience</span>
-      <b>✦</b>
+        </div>
 
-      <span>30+ Projects Delivered</span>
-      <b>✦</b>
+      </section>
 
-      <span>98% Client Satisfaction</span>
-      <b>✦</b>
 
-      <span>100% Commitment</span>
-      <b>✦</b>
+      {/* =====================================================
+          FEATURE SECTION
+      ===================================================== */}
 
-      <span>15+ Years Experience</span>
-      <b>✦</b>
+      <section className="why-feature">
 
-      <span>30+ Projects Delivered</span>
-      <b>✦</b>
+        <div className="why-feature-image">
 
-      <span>98% Client Satisfaction</span>
-      <b>✦</b>
+          <img
+            src="/images/why-us.jpg"
+            alt="D Square Construction"
+          />
 
-      <span>100% Commitment</span>
-      <b>✦</b>
+        </div>
+
+
+        <div className="why-feature-content">
+
+          <span className="why-small-label">
+            Our Approach
+          </span>
+
+          <h2>
+            We build
+            <br />
+            <span>with intention.</span>
+          </h2>
+
+          <p>
+            Every project begins with understanding the
+            people, purpose, and vision behind it. From
+            planning to execution, we focus on quality,
+            transparency, and attention to detail.
+          </p>
+
+          <div className="why-sign">
+
+            <span>
+              D Square
+            </span>
+
+            <small>
+              Construction & Design
+            </small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          REASONS SECTION
+      ===================================================== */}
+
+      <section className="why-reasons">
+
+        <div className="why-reasons-heading">
+
+          <span className="why-small-label">
+            What Sets Us Apart
+          </span>
+
+          <h2>
+            Why choose
+            <br />
+            <span>us?</span>
+          </h2>
+
+        </div>
+
+
+        <div className="reasons-list">
+
+          {/* REASON 01 */}
+
+          <div className="reason-item">
+
+            <div className="reason-number">
+              01
+            </div>
+
+            <div className="reason-content">
+
+              <h3>
+                Quality First
+              </h3>
+
+              <p>
+                We never compromise on materials,
+                workmanship, or finishing quality.
+              </p>
+
+            </div>
+
+            <div className="reason-arrow">
+              <FiArrowUpRight />
+            </div>
+
+          </div>
+
+
+          {/* REASON 02 */}
+
+          <div className="reason-item">
+
+            <div className="reason-number">
+              02
+            </div>
+
+            <div className="reason-content">
+
+              <h3>
+                Clear Communication
+              </h3>
+
+              <p>
+                We keep our clients informed throughout
+                every stage of the construction process.
+              </p>
+
+            </div>
+
+            <div className="reason-arrow">
+              <FiArrowUpRight />
+            </div>
+
+          </div>
+
+
+          {/* REASON 03 */}
+
+          <div className="reason-item">
+
+            <div className="reason-number">
+              03
+            </div>
+
+            <div className="reason-content">
+
+              <h3>
+                Experienced Team
+              </h3>
+
+              <p>
+                Our experienced professionals bring
+                knowledge, precision, and dedication
+                to every project.
+              </p>
+
+            </div>
+
+            <div className="reason-arrow">
+              <FiArrowUpRight />
+            </div>
+
+          </div>
+
+
+          {/* REASON 04 */}
+
+          <div className="reason-item">
+
+            <div className="reason-number">
+              04
+            </div>
+
+            <div className="reason-content">
+
+              <h3>
+                Built To Last
+              </h3>
+
+              <p>
+                We create strong, functional spaces
+                designed to remain valuable for years.
+              </p>
+
+            </div>
+
+            <div className="reason-arrow">
+              <FiArrowUpRight />
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          NUMBER COUNTER SECTION
+      ===================================================== */}
+
+      <section className="why-numbers">
+
+        <div className="why-ticker">
+
+          <div className="why-ticker-content">
+
+            {/* 15+ */}
+
+            <div className="counter-item">
+
+              <div className="counter-number">
+                <Counter
+                  end={15}
+                  suffix="+"
+                />
+              </div>
+
+              <p>
+                Years Experience
+              </p>
+
+            </div>
+
+
+            {/* SEPARATOR */}
+
+            <b>✦</b>
+
+
+            {/* 30+ */}
+
+            <div className="counter-item">
+
+              <div className="counter-number">
+                <Counter
+                  end={30}
+                  suffix="+"
+                />
+              </div>
+
+              <p>
+                Projects Delivered
+              </p>
+
+            </div>
+
+
+            {/* SEPARATOR */}
+
+            <b>✦</b>
+
+
+            {/* 98% */}
+
+            <div className="counter-item">
+
+              <div className="counter-number">
+                <Counter
+                  end={98}
+                  suffix="%"
+                />
+              </div>
+
+              <p>
+                Client Satisfaction
+              </p>
+
+            </div>
+
+
+            {/* SEPARATOR */}
+
+            <b>✦</b>
+
+
+            {/* 100% */}
+
+            <div className="counter-item">
+
+              <div className="counter-number">
+                <Counter
+                  end={100}
+                  suffix="%"
+                />
+              </div>
+
+              <p>
+                Commitment
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
 
     </div>
+  );
+};
 
-  </div>
-</section>
-
-    </main>
-  )
-}
-
-export default WhyUs
+export default WhyUs;

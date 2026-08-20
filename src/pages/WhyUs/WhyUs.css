@@ -17,6 +17,7 @@
 
 .why-intro {
   min-height: 70vh;
+
   padding: 120px 8%;
 
   display: flex;
@@ -135,6 +136,7 @@
 
 .why-feature-image img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
@@ -374,68 +376,89 @@
 
 
 /* =========================================================
-   MAIN NUMBERS / NEWS TICKER
+   NUMBER / COUNTER SECTION
 ========================================================= */
 
 .why-numbers {
   width: 100%;
-  overflow: hidden;
-  padding: 90px 0;
+
+  padding: 60px 6%;
+
+  box-sizing: border-box;
+
   background: #ffffff;
+
   border-top: 1px solid #d5d1c8;
+
   border-bottom: 1px solid #d5d1c8;
-  position: relative;
+
+  overflow: hidden;
 }
 
 
 /* =========================================================
-   TICKER WRAPPER
+   COUNTER WRAPPER
 ========================================================= */
 
 .why-ticker {
   width: 100%;
-
-  overflow: hidden;
 }
 
-
-/* =========================================================
-   MOVING CONTENT
-========================================================= */
-
 .why-ticker-content {
+  width: 100%;
+
   display: flex;
 
   align-items: center;
 
-  width: max-content;
+  justify-content: space-between;
 
-  flex-shrink: 0;
-
-  white-space: nowrap;
-
-  animation: newsTicker 20s linear infinite;
-
-  will-change: transform;
+  gap: 35px;
 }
 
 
 /* =========================================================
-   TICKER MAIN TEXT
+   COUNTER ITEM
 ========================================================= */
 
-.why-ticker-content span {
-  display: inline-block;
+.counter-item {
+  flex: 1;
 
-  padding: 0 42px;
+  text-align: center;
 
+  min-width: 0;
+}
+
+.counter-number {
   color: #1b1b19;
 
-  font-size: 30px;
+  font-size: clamp(45px, 5vw, 72px);
+
+  line-height: 1;
 
   font-weight: 600;
 
-  letter-spacing: 1.8px;
+  letter-spacing: -3px;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-number span {
+  display: inline-block;
+
+  min-width: 1.5em;
+}
+
+.counter-item p {
+  margin: 15px 0 0;
+
+  color: #6f6b64;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
 
   text-transform: uppercase;
 }
@@ -445,31 +468,14 @@
    GOLD SEPARATOR
 ========================================================= */
 
-.why-ticker-content b {
-  display: inline-block;
+.why-ticker-content > b {
+  flex-shrink: 0;
 
   color: #c6a15b;
 
-  font-size: 20px;
+  font-size: 21px;
 
   font-weight: 400;
-}
-
-
-/* =========================================================
-   CONTINUOUS NEWS ANIMATION
-========================================================= */
-
-@keyframes newsTicker {
-
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-
 }
 
 
@@ -478,7 +484,6 @@
 ========================================================= */
 
 @keyframes fadeUp {
-
   from {
     opacity: 0;
 
@@ -490,7 +495,6 @@
 
     transform: translateY(0);
   }
-
 }
 
 
@@ -499,7 +503,6 @@
 ========================================================= */
 
 @keyframes imageReveal {
-
   from {
     opacity: 0;
 
@@ -511,7 +514,6 @@
 
     transform: scale(1);
   }
-
 }
 
 
@@ -542,6 +544,8 @@
   }
 
 
+  /* FEATURE */
+
   .why-feature {
     padding: 90px 6%;
 
@@ -559,6 +563,8 @@
   }
 
 
+  /* REASONS */
+
   .why-reasons {
     padding: 90px 6%;
 
@@ -572,22 +578,29 @@
   }
 
 
-  /* TABLET TICKER */
+  /* COUNTERS */
+
+  .why-numbers {
+    padding: 50px 5%;
+  }
 
   .why-ticker-content {
-    animation-duration: 17s;
+    gap: 20px;
   }
 
-  .why-ticker-content span {
-    font-size: 18px;
-
-    padding: 0 32px;
+  .counter-number {
+    font-size: 50px;
   }
 
-  .why-ticker-content b {
-    font-size: 18px;
+  .counter-item p {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
   }
 
+  .why-ticker-content > b {
+    font-size: 17px;
+  }
 }
 
 
@@ -616,6 +629,8 @@
   }
 
 
+  /* FEATURE */
+
   .why-feature {
     padding: 75px 5%;
 
@@ -639,6 +654,8 @@
   }
 
 
+  /* REASONS */
+
   .why-reasons {
     padding: 75px 5%;
 
@@ -651,6 +668,8 @@
     letter-spacing: -2px;
   }
 
+
+  /* REASON ITEMS */
 
   .reason-item {
     grid-template-columns: 40px 1fr 35px;
@@ -681,28 +700,81 @@
   }
 
 
-  /* MOBILE TICKER */
+  /* COUNTERS */
 
   .why-numbers {
-    padding: 29px 0;
+    padding: 45px 5%;
   }
 
   .why-ticker-content {
-    animation-duration: 13s;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px 15px;
   }
 
-  .why-ticker-content span {
-    font-size: 17px;
+  .counter-number {
+    font-size: 43px;
+
+    letter-spacing: -2px;
+  }
+
+  .counter-item p {
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+
+    margin-top: 10px;
+  }
+
+  .why-ticker-content > b {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .why-intro {
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+  .why-intro h1 {
+    font-size: 52px;
+  }
+
+  .why-feature-image {
+    height: 350px;
+  }
+
+  .why-feature-content h2 {
+    font-size: 44px;
+  }
+
+  .why-reasons-heading h2 {
+    font-size: 45px;
+  }
+
+  .why-numbers {
+    padding: 40px 5%;
+  }
+
+  .counter-number {
+    font-size: 38px;
+  }
+
+  .counter-item p {
+    font-size: 8px;
 
     letter-spacing: 1px;
-
-    padding: 0 22px;
   }
-
-  .why-ticker-content b {
-    font-size: 14px;
-  }
-
 }
 
 
@@ -712,14 +784,13 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .why-ticker-content {
-    animation: none;
-  }
-
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
     transition-duration: 0.01ms !important;
   }
-
 }
