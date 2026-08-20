@@ -1,13 +1,70 @@
-/* /* =========================================================
+/* =========================================================
    D SQUARE CONSTRUCTION
-   PREMIUM FOOTER
+   PREMIUM VIDEO FOOTER
 ========================================================= */
 
 .footer {
+  position: relative;
   width: 100%;
-  background: #111111;
+  background: #080808;
   color: #ffffff;
   overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND VIDEO
+========================================================= */
+
+.footer-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -3;
+filter:
+  blur(1px)
+  brightness(0.3)
+  contrast(1.05);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+/* .footer-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(109, 104, 104, 0.45) 0%,
+      rgba(64, 63, 63, 0.35) 50%,
+      rgba(68, 66, 66, 0.45) 100%
+    );
+  z-index: -2;
+  pointer-events: none;
+} */
+
+
+/* Extra dark layer for better text visibility */
+
+.footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.20);
+
+  z-index: -1;
+
+  pointer-events: none;
 }
 
 
@@ -16,10 +73,16 @@
 ========================================================= */
 
 .footer-container {
+  position: relative;
+  z-index: 2;
+
   width: 100%;
   max-width: 1400px;
+
   margin: auto;
+
   padding: 80px 6% 25px;
+
   box-sizing: border-box;
 }
 
@@ -41,7 +104,8 @@
 
   padding-bottom: 75px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.25);
 
   animation: footerReveal 0.9s ease forwards;
 }
@@ -65,6 +129,7 @@
 .footer-logo img {
   width: 150px;
   height: auto;
+
   display: block;
   object-fit: contain;
 
@@ -76,7 +141,7 @@
 
 .footer-logo:hover img {
   transform: translateY(-3px);
-  filter: brightness(1.1);
+  filter: brightness(1.15);
 }
 
 
@@ -85,11 +150,16 @@
 
   margin: 0 0 28px;
 
-  color: #d2d2d2;
+  color: #ffffff;
 
   font-size: 16px;
 
+  font-weight: 500;
+
   line-height: 1.8;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -118,7 +188,7 @@
 
   font-size: 11px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 0.8px;
 
@@ -129,24 +199,27 @@
 .footer-project-btn svg {
   font-size: 17px;
 
-  transition: transform 0.35s ease;
+  transition:
+    transform 0.35s ease;
 }
 
 
 .footer-project-btn:hover {
   background: transparent;
 
-  color: #c6a15b;
+  color: #ffffff;
 
   transform: translateY(-3px);
 
   box-shadow:
-    0 10px 25px rgba(198, 161, 91, 0.12);
+    0 10px 25px
+    rgba(198, 161, 91, 0.25);
 }
 
 
 .footer-project-btn:hover svg {
-  transform: translate(4px, -4px);
+  transform:
+    translate(4px, -4px);
 }
 
 
@@ -170,11 +243,14 @@
 
   color: #ffffff;
 
-  font-size: 11px;
+  font-size: 12px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 2.5px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -193,7 +269,8 @@
 
   background: #c6a15b;
 
-  transition: width 0.35s ease;
+  transition:
+    width 0.35s ease;
 }
 
 
@@ -216,13 +293,18 @@
 
   margin-bottom: 14px;
 
-  color: #d0d0d0;
+  color: #f1f1f1;
 
   text-decoration: none;
 
   font-size: 14px;
 
+  font-weight: 500;
+
   line-height: 1.7;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9);
 
   transition:
     color 0.3s ease,
@@ -245,14 +327,16 @@
 
   background: #c6a15b;
 
-  transition: width 0.3s ease;
+  transition:
+    width 0.3s ease;
 }
 
 
 .footer-column a:hover {
   color: #c6a15b;
 
-  transform: translateX(5px);
+  transform:
+    translateX(5px);
 }
 
 
@@ -277,11 +361,16 @@
 
   margin-bottom: 18px;
 
-  color: #d0d0d0;
+  color: #f1f1f1;
 
   font-size: 14px;
 
+  font-weight: 500;
+
   line-height: 1.6;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -293,7 +382,8 @@
 
 
 .footer-contact a:hover {
-  transform: translateX(5px);
+  transform:
+    translateX(5px);
 
   color: #c6a15b;
 }
@@ -304,9 +394,12 @@
 
   font-size: 11px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 2px;
+
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -317,7 +410,10 @@
 .footer-bottom {
   display: grid;
 
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
 
   align-items: center;
 
@@ -325,7 +421,8 @@
 
   padding: 30px 0;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.22);
 }
 
 
@@ -353,24 +450,34 @@
 
   justify-content: center;
 
-  border: 1px solid rgba(198, 161, 91, 0.4);
+  border:
+    1px solid
+    rgba(198, 161, 91, 0.6);
 
   border-radius: 50%;
 
   color: #c6a15b;
 
   font-size: 13px;
+
+  background:
+    rgba(0, 0, 0, 0.25);
 }
 
 
 .copyright p {
   margin: 0;
 
-  color: #c0c0c0;
+  color: #ffffff;
 
   font-size: 12px;
 
+  font-weight: 500;
+
   line-height: 1.6;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -394,13 +501,16 @@
 .footer-tagline p {
   margin: 0;
 
-  color: #d0d0d0;
+  color: #ffffff;
 
   font-size: 13px;
 
-  font-weight: 500;
+  font-weight: 600;
 
   letter-spacing: 0.5px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -414,26 +524,38 @@
   color: #c6a15b;
 
   font-size: 18px;
+
+  filter:
+    drop-shadow(
+      0 2px 6px rgba(0, 0, 0, 0.8)
+    );
 }
 
 
 .building-icon svg {
-  transition: transform 0.4s ease;
+  transition:
+    transform 0.4s ease;
 }
 
 
 .building-icon svg:first-child {
-  animation: buildingFloat 3s ease-in-out infinite;
+  animation:
+    buildingFloat 3s ease-in-out infinite;
 }
 
 
 .building-icon svg:last-child {
-  animation: buildingFloat 3s ease-in-out infinite 0.5s;
+  animation:
+    buildingFloat
+    3s ease-in-out infinite
+    0.5s;
 }
 
 
-.footer-tagline:hover .building-icon svg {
-  transform: translateY(-4px);
+.footer-tagline:hover
+.building-icon svg {
+  transform:
+    translateY(-4px);
 }
 
 
@@ -455,13 +577,16 @@
 .social-links h4 {
   margin: 0 12px 0 0;
 
-  color: #c0c0c0;
+  color: #ffffff;
 
   font-size: 10px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 2px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -476,11 +601,16 @@
 
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
 
   border-radius: 50%;
 
-  color: #c8c8c8;
+  color: #ffffff;
+
+  background:
+    rgba(0, 0, 0, 0.25);
 
   text-decoration: none;
 
@@ -497,10 +627,13 @@
 
   color: #111111;
 
-  transform: translateY(-5px) rotate(-5deg);
+  transform:
+    translateY(-5px)
+    rotate(-5deg);
 
   box-shadow:
-    0 8px 20px rgba(198, 161, 91, 0.18);
+    0 8px 20px
+    rgba(198, 161, 91, 0.3);
 }
 
 
@@ -522,13 +655,19 @@
 
 
 .footer-legal a {
-  color: #b5b5b5;
+  color: #eeeeee;
 
   text-decoration: none;
 
   font-size: 11px;
 
-  transition: color 0.3s ease;
+  font-weight: 500;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.9);
+
+  transition:
+    color 0.3s ease;
 }
 
 
@@ -549,29 +688,37 @@
 ========================================================= */
 
 @keyframes footerReveal {
+
   from {
     opacity: 0;
 
-    transform: translateY(30px);
+    transform:
+      translateY(30px);
   }
 
   to {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
+
 }
 
 
 @keyframes buildingFloat {
+
   0%,
   100% {
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 
   50% {
-    transform: translateY(-5px);
+    transform:
+      translateY(-5px);
   }
+
 }
 
 
@@ -580,20 +727,24 @@
 ========================================================= */
 
 @media (max-width: 1000px) {
+
   .footer-container {
-    padding: 70px 6% 25px;
+    padding:
+      70px 6% 25px;
   }
 
 
   .footer-top {
-    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-columns:
+      1.2fr 1fr 1fr;
 
     gap: 50px;
   }
 
 
   .footer-brand {
-    grid-column: span 3;
+    grid-column:
+      span 3;
   }
 
 
@@ -614,6 +765,7 @@
   .footer-contact > span {
     font-size: 14px;
   }
+
 }
 
 
@@ -622,13 +774,16 @@
 ========================================================= */
 
 @media (max-width: 700px) {
+
   .footer-container {
-    padding: 60px 7% 22px;
+    padding:
+      60px 7% 22px;
   }
 
 
   .footer-top {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     gap: 45px;
 
@@ -648,7 +803,7 @@
 
     font-size: 15.5px;
 
-    color: #d2d2d2;
+    color: #ffffff;
 
     line-height: 1.8;
   }
@@ -660,7 +815,7 @@
 
     font-size: 14px;
 
-    color: #d0d0d0;
+    color: #f1f1f1;
   }
 
 
@@ -668,14 +823,15 @@
   .footer-contact > span {
     font-size: 14px;
 
-    color: #d0d0d0;
+    color: #f1f1f1;
   }
 
 
   /* BOTTOM */
 
   .footer-bottom {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     gap: 25px;
 
@@ -693,7 +849,7 @@
   .copyright p {
     font-size: 12px;
 
-    color: #c0c0c0;
+    color: #ffffff;
   }
 
 
@@ -705,7 +861,7 @@
   .footer-tagline p {
     font-size: 13px;
 
-    color: #d0d0d0;
+    color: #ffffff;
   }
 
 
@@ -721,11 +877,12 @@
   .social-links h4 {
     width: 100%;
 
-    margin: 0 0 4px;
+    margin:
+      0 0 4px;
 
     font-size: 10px;
 
-    color: #c0c0c0;
+    color: #ffffff;
   }
 
 
@@ -741,8 +898,9 @@
   .footer-legal a {
     font-size: 11px;
 
-    color: #b5b5b5;
+    color: #eeeeee;
   }
+
 }
 
 
@@ -751,6 +909,7 @@
 ========================================================= */
 
 @media (max-width: 400px) {
+
   .footer-container {
     padding-left: 6%;
 
@@ -766,12 +925,13 @@
   .footer-brand > p {
     font-size: 14.5px;
 
-    color: #d2d2d2;
+    color: #ffffff;
   }
 
 
   .footer-project-btn {
-    padding: 12px 17px;
+    padding:
+      12px 17px;
   }
 
 
@@ -779,7 +939,7 @@
   .footer-column > span {
     font-size: 14px;
 
-    color: #d0d0d0;
+    color: #f1f1f1;
   }
 
 
@@ -787,7 +947,7 @@
   .footer-contact > span {
     font-size: 14px;
 
-    color: #d0d0d0;
+    color: #f1f1f1;
   }
 
 
@@ -798,6 +958,7 @@
 
     font-size: 14px;
   }
+
 }
 
 
@@ -806,17 +967,29 @@
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .footer-top {
     animation: none;
   }
+
 
   .building-icon svg {
     animation: none;
   }
 
+
+  .footer-video {
+    filter:
+      brightness(0.45)
+      contrast(1.05);
+  }
+
+
   *,
   *::before,
   *::after {
-    transition-duration: 0.01ms !important;
+    transition-duration:
+      0.01ms !important;
   }
+
 }

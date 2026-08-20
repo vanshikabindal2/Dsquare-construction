@@ -78,7 +78,6 @@
 .services-hero h1 span {
     display: block;
     color: #d2a45d;
-    font-style: italic;
     font-weight: 400;
 }
 
@@ -122,7 +121,6 @@
 .services-intro-heading h2 span,
 .process-heading h2 span {
     color: #a87b3e;
-    font-style: italic;
     font-weight: 400;
 }
 
@@ -397,7 +395,6 @@
 
 .section-cta-content h2 span {
     color: #d0a15a;
-    font-style: italic;
     font-weight: 400;
 }
 

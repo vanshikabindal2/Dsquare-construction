@@ -15,8 +15,13 @@ const slides=[
     Highlight:"Purpose and Precision ",
     },
 
-     {image:"https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tag:"MODERN CONSTRUCTION",
+    //  {image:"https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    // tag:"MODERN CONSTRUCTION",
+    // title:"Creating Space ",
+    // Highlight:"That Inspire",
+    // },
+
+         {image:"https://images.pexels.com/photos/37687676/pexels-photo-37687676.jpeg",
     title:"Creating Space ",
     Highlight:"That Inspire",
     },
