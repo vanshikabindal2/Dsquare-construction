@@ -51,7 +51,7 @@ const Services = () => {
                 {
             number :"07",
             title:"Society and Park Development",
-                        description:"We develop modern social spaces and parks with thoughtful planning, durable construction, green landscapes, and community-focused designs that create welcoming environments for people to connect, relax, and grow.",
+            description:"We create well-planned societies and beautiful parks with quality construction, modern infrastructure, green spaces, and comfortable environments designed for better community living and lasting value.",
 
             image:"https://images.pexels.com/photos/38772834/pexels-photo-38772834.jpeg"
         },
