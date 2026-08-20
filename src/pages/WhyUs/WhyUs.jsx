@@ -113,7 +113,7 @@ const WhyUs = () => {
         <div className="why-feature-image">
 
           <img
-            src="/images/why-us.jpg"
+            src="https://images.pexels.com/photos/32845698/pexels-photo-32845698.jpeg"
             alt="D Square Construction"
           />
 
