@@ -1,6 +1,6 @@
-/* ================================
+/* =========================================================
    WHY US PAGE
-================================ */
+========================================================= */
 
 .why-page {
   width: 100%;
@@ -10,101 +10,139 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================================
+
+/* =========================================================
    INTRO SECTION
-================================ */
+========================================================= */
 
 .why-intro {
   min-height: 70vh;
   padding: 120px 8%;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
   gap: 80px;
+
   border-bottom: 1px solid #d8d5ce;
 }
 
 .why-intro-left {
   max-width: 700px;
+
   animation: fadeUp 0.9s ease forwards;
 }
 
 .why-label,
 .why-small-label {
   display: inline-block;
+
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: 2px;
+
   text-transform: uppercase;
+
   color: #77736b;
+
   margin-bottom: 25px;
 }
 
 .why-intro h1 {
   margin: 0;
+
   font-size: clamp(60px, 8vw, 125px);
+
   line-height: 0.88;
+
   letter-spacing: -5px;
+
   font-weight: 500;
 }
 
 .why-intro h1 span {
   color: #a06a32;
+
   font-style: italic;
+
   font-family: Georgia, serif;
+
   font-weight: 400;
 }
 
 .why-intro-right {
   max-width: 390px;
+
   padding-bottom: 8px;
+
   animation: fadeUp 1s ease 0.2s both;
 }
 
 .why-intro-right p {
   margin: 0;
+
   font-size: 17px;
+
   line-height: 1.7;
+
   color: #5e5b55;
 }
 
 
-/* ================================
+/* =========================================================
    FEATURE SECTION
-================================ */
+========================================================= */
 
 .why-feature {
   padding: 120px 8%;
+
   display: grid;
+
   grid-template-columns: 1.05fr 0.95fr;
+
   gap: 90px;
+
   align-items: center;
 }
 
 .why-feature-image {
   height: 650px;
+
   overflow: hidden;
+
   position: relative;
+
+  animation: imageReveal 1s ease forwards;
 }
 
 .why-feature-image::after {
   content: "";
+
   position: absolute;
+
   inset: 0;
+
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.15),
     transparent 40%
   );
+
   pointer-events: none;
 }
 
 .why-feature-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .why-feature-image:hover img {
@@ -117,66 +155,94 @@
 
 .why-feature-content h2 {
   font-size: clamp(45px, 5vw, 75px);
+
   line-height: 0.95;
+
   letter-spacing: -3px;
+
   font-weight: 500;
+
   margin: 0 0 35px;
 }
 
 .why-feature-content h2 span {
   color: #a06a32;
+
   font-family: Georgia, serif;
+
   font-style: italic;
+
   font-weight: 400;
 }
 
 .why-feature-content p {
   color: #66635d;
+
   font-size: 17px;
+
   line-height: 1.8;
+
   margin-bottom: 45px;
 }
 
 .why-sign {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   padding-top: 25px;
+
   border-top: 1px solid #d5d1c8;
+
   width: fit-content;
+
   text-transform: uppercase;
 }
 
 .why-sign span {
   font-family: Georgia, serif;
+
   font-size: 25px;
+
   font-style: italic;
+
   color: #a06a32;
 }
 
 .why-sign small {
   font-size: 9px;
+
   letter-spacing: 2px;
+
   color: #77736b;
 }
 
 
-/* ================================
+/* =========================================================
    REASONS SECTION
-================================ */
+========================================================= */
 
 .why-reasons {
   padding: 120px 8%;
+
   background: #1b1b19;
+
   color: #f5f3ee;
+
   display: grid;
+
   grid-template-columns: 0.8fr 1.2fr;
+
   gap: 100px;
 }
 
 .why-reasons-heading {
   position: sticky;
+
   top: 100px;
+
   height: fit-content;
 }
 
@@ -186,23 +252,30 @@
 
 .why-reasons-heading h2 {
   margin: 0;
+
   font-size: clamp(48px, 5vw, 80px);
+
   line-height: 0.95;
+
   letter-spacing: -3px;
+
   font-weight: 500;
 }
 
 .why-reasons-heading h2 span {
   color: #b77b3f;
+
   font-family: Georgia, serif;
+
   font-style: italic;
+
   font-weight: 400;
 }
 
 
-/* ================================
+/* =========================================================
    REASON ITEMS
-================================ */
+========================================================= */
 
 .reasons-list {
   border-top: 1px solid #45433f;
@@ -210,12 +283,19 @@
 
 .reason-item {
   min-height: 170px;
+
   padding: 35px 0;
+
   display: grid;
+
   grid-template-columns: 70px 1fr 45px;
+
   align-items: center;
+
   gap: 25px;
+
   border-bottom: 1px solid #45433f;
+
   transition:
     padding 0.4s ease,
     background 0.4s ease;
@@ -223,38 +303,55 @@
 
 .reason-item:hover {
   padding-left: 20px;
+
   padding-right: 20px;
+
   background: #242421;
 }
 
 .reason-number {
   font-size: 13px;
+
   color: #aaa69e;
+
   letter-spacing: 1px;
 }
 
 .reason-content h3 {
   margin: 0 0 12px;
+
   font-size: 25px;
+
   font-weight: 500;
 }
 
 .reason-content p {
   margin: 0;
+
   max-width: 580px;
+
   color: #aaa69e;
+
   font-size: 15px;
+
   line-height: 1.7;
 }
 
 .reason-arrow {
   width: 40px;
+
   height: 40px;
+
   border: 1px solid #55534e;
+
   border-radius: 50%;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   transition:
     transform 0.4s ease,
     background 0.4s ease,
@@ -267,104 +364,172 @@
 
 .reason-item:hover .reason-arrow {
   transform: rotate(45deg);
+
   background: #b77b3f;
+
   color: #fff;
+
   border-color: #b77b3f;
 }
 
 
-/* ================================
-   NUMBERS SECTION
-================================ */
+/* =========================================================
+   MAIN NUMBERS / NEWS TICKER
+========================================================= */
 
 .why-numbers {
-  padding: 100px 8%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: #f5f3ee;
-}
-
-.number-box {
-  padding: 20px 35px;
-  border-right: 1px solid #d5d1c8;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  width: 100%;
+  overflow: hidden;
+  padding: 90px 0;
+  background: #ffffff;
+  border-top: 1px solid #d5d1c8;
+  border-bottom: 1px solid #d5d1c8;
   position: relative;
 }
 
-.number-box:first-child {
-  padding-left: 0;
+
+/* =========================================================
+   TICKER WRAPPER
+========================================================= */
+
+.why-ticker {
+  width: 100%;
+
+  overflow: hidden;
 }
 
-.number-box:last-child {
-  border-right: none;
+
+/* =========================================================
+   MOVING CONTENT
+========================================================= */
+
+.why-ticker-content {
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+  animation: newsTicker 20s linear infinite;
+
+  will-change: transform;
 }
 
-.number-box strong {
-  font-size: clamp(45px, 5vw, 70px);
-  font-weight: 500;
-  letter-spacing: -3px;
+
+/* =========================================================
+   TICKER MAIN TEXT
+========================================================= */
+
+.why-ticker-content span {
+  display: inline-block;
+
+  padding: 0 42px;
+
   color: #1b1b19;
-  transition: color 0.3s ease;
-}
 
-.number-box span {
-  color: #77736b;
-  font-size: 13px;
+  font-size: 26px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.number-box:hover strong {
-  color: #a06a32;
 }
 
 
-/* ================================
-   ANIMATIONS
-================================ */
+/* =========================================================
+   GOLD SEPARATOR
+========================================================= */
+
+.why-ticker-content b {
+  display: inline-block;
+
+  color: #c6a15b;
+
+  font-size: 20px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   CONTINUOUS NEWS ANIMATION
+========================================================= */
+
+@keyframes newsTicker {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* =========================================================
+   FADE UP ANIMATION
+========================================================= */
 
 @keyframes fadeUp {
+
   from {
     opacity: 0;
+
     transform: translateY(40px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
+
 }
 
+
+/* =========================================================
+   IMAGE REVEAL
+========================================================= */
+
 @keyframes imageReveal {
+
   from {
     opacity: 0;
+
     transform: scale(1.08);
   }
 
   to {
     opacity: 1;
+
     transform: scale(1);
   }
-}
 
-.why-feature-image {
-  animation: imageReveal 1s ease forwards;
 }
 
 
-/* ================================
-   RESPONSIVE TABLET
-================================ */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
   .why-intro {
     min-height: auto;
+
     padding: 90px 6%;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 50px;
   }
 
@@ -376,9 +541,12 @@
     max-width: 600px;
   }
 
+
   .why-feature {
     padding: 90px 6%;
+
     grid-template-columns: 1fr;
+
     gap: 60px;
   }
 
@@ -390,9 +558,12 @@
     max-width: 700px;
   }
 
+
   .why-reasons {
     padding: 90px 6%;
+
     grid-template-columns: 1fr;
+
     gap: 60px;
   }
 
@@ -400,51 +571,54 @@
     position: static;
   }
 
-  .why-numbers {
-    padding: 80px 6%;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 0;
+
+  /* TABLET TICKER */
+
+  .why-ticker-content {
+    animation-duration: 17s;
   }
 
-  .number-box:nth-child(2) {
-    border-right: none;
+  .why-ticker-content span {
+    font-size: 18px;
+
+    padding: 0 32px;
   }
 
-  .number-box:nth-child(3),
-  .number-box:nth-child(4) {
-    border-top: 1px solid #d5d1c8;
-    padding-top: 40px;
+  .why-ticker-content b {
+    font-size: 18px;
   }
 
-  .number-box:nth-child(3) {
-    padding-left: 0;
-  }
 }
 
 
-/* ================================
+/* =========================================================
    MOBILE
-================================ */
+========================================================= */
 
 @media (max-width: 600px) {
 
   .why-intro {
     padding: 75px 5%;
+
     gap: 40px;
   }
 
   .why-intro h1 {
     font-size: 58px;
+
     letter-spacing: -2px;
   }
 
   .why-intro-right p {
     font-size: 15px;
+
     line-height: 1.7;
   }
 
+
   .why-feature {
     padding: 75px 5%;
+
     gap: 45px;
   }
 
@@ -454,32 +628,41 @@
 
   .why-feature-content h2 {
     font-size: 48px;
+
     letter-spacing: -2px;
   }
 
   .why-feature-content p {
     font-size: 15px;
+
     line-height: 1.7;
   }
 
+
   .why-reasons {
     padding: 75px 5%;
+
     gap: 50px;
   }
 
   .why-reasons-heading h2 {
     font-size: 50px;
+
     letter-spacing: -2px;
   }
 
+
   .reason-item {
     grid-template-columns: 40px 1fr 35px;
+
     gap: 12px;
+
     padding: 28px 0;
   }
 
   .reason-item:hover {
     padding-left: 10px;
+
     padding-right: 10px;
   }
 
@@ -493,39 +676,50 @@
 
   .reason-arrow {
     width: 32px;
+
     height: 32px;
   }
 
+
+  /* MOBILE TICKER */
+
   .why-numbers {
-    padding: 70px 5%;
-    grid-template-columns: 1fr 1fr;
+    padding: 29px 0;
   }
 
-  .number-box {
-    padding: 15px;
+  .why-ticker-content {
+    animation-duration: 13s;
   }
 
-  .number-box strong {
-    font-size: 45px;
+  .why-ticker-content span {
+    font-size: 17px;
+
+    letter-spacing: 1px;
+
+    padding: 0 22px;
   }
 
-  .number-box span {
-    font-size: 10px;
+  .why-ticker-content b {
+    font-size: 14px;
   }
+
 }
 
 
-/* ================================
+/* =========================================================
    REDUCE MOTION
-================================ */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
+  .why-ticker-content {
+    animation: none;
+  }
 
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
 }

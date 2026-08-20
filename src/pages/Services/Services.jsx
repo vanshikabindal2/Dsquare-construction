@@ -46,6 +46,15 @@ const Services = () => {
 
             image:"https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?q=80&w=1157&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
+
+
+                {
+            number :"07",
+            title:"Social and Park Development",
+                        description:"We develop modern social spaces and parks with thoughtful planning, durable construction, green landscapes, and community-focused designs that create welcoming environments for people to connect, relax, and grow.",
+
+            image:"https://images.pexels.com/photos/38772834/pexels-photo-38772834.jpeg"
+        },
     ]
   return (
     <main className='services-page'>
@@ -129,6 +138,9 @@ const Services = () => {
                 <h3>Deliver</h3>
                 <p>We deliver quality construction projects on time, combining skilled workmanship, reliable materials, smart execution, and complete dedication to client satisfaction.</p>
             </div>
+
+
+                 
         </div>
     </div>
 </section>

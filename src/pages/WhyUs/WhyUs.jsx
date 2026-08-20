@@ -70,29 +70,38 @@ const WhyUs = () => {
 ) )}</div>
 </section>
 
-<section className='why-numbers'>
-    <div className='number-box'>
-        <strong>15+</strong>
-        <span>Years Experience</span>
+<section className="why-numbers">
+  <div className="why-ticker">
+
+    <div className="why-ticker-content">
+
+      <span>15+ Years Experience</span>
+      <b>✦</b>
+
+      <span>30+ Projects Delivered</span>
+      <b>✦</b>
+
+      <span>98% Client Satisfaction</span>
+      <b>✦</b>
+
+      <span>100% Commitment</span>
+      <b>✦</b>
+
+      <span>15+ Years Experience</span>
+      <b>✦</b>
+
+      <span>30+ Projects Delivered</span>
+      <b>✦</b>
+
+      <span>98% Client Satisfaction</span>
+      <b>✦</b>
+
+      <span>100% Commitment</span>
+      <b>✦</b>
+
     </div>
 
-    <div className='number-box'>
-        <strong>30+</strong>
-        <span>Project Delivered</span>
-    </div>
-
-
-    <div className='number-box'>
-        <strong>98%</strong>
-        <span>Client Satisfaction</span>
-    </div>
-
-        <div className='number-box'>
-        <strong>100%</strong>
-        <span>Commitment</span>
-    </div>
-
-
+  </div>
 </section>
 
     </main>

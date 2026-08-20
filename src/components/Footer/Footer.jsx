@@ -99,6 +99,10 @@ const Footer = () => {
               Project Management
             </span>
 
+            <span>
+              Social and Park Development
+            </span>
+
           </div>
 
 
