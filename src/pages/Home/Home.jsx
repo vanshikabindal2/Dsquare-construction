@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Hero1 from '../../assets/Hero1.avif'
 import hero2 from '../../assets/hero2.avif'
-import hero3 from '../../assets/hero3.avif'
+import h from '../../assets/h.avif'
 
 import './Home.css'
 const slides=[
@@ -25,7 +25,7 @@ const slides=[
     // Highlight:"That Inspire",
     // },
 
-         {image:hero3,
+         {image:h,
     title:"Creating Space ",
     Highlight:"That Inspire",
     },
@@ -39,7 +39,7 @@ const Home = () => {
   useEffect(() => {
     const slider = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(slider);
   }, []);
