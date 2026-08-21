@@ -1,15 +1,19 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import Hero1 from '../../assets/Hero1.avif'
+import hero2 from '../../assets/hero2.avif'
+import hero3 from '../../assets/hero3.avif'
+
 import './Home.css'
 const slides=[
-    {image:"https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  {image:Hero1,
     tag:"Building the future",
     title:"We Build",
     Highlight:"More Than  Structure",
     },
 
-     {image:"https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     {image:hero2,
     tag:"QUALITY . TRUST . EXCELLENCE",
     title:" Build with",
     Highlight:"Purpose and Precision ",
@@ -21,7 +25,7 @@ const slides=[
     // Highlight:"That Inspire",
     // },
 
-         {image:"https://images.pexels.com/photos/37687676/pexels-photo-37687676.jpeg",
+         {image:hero3,
     title:"Creating Space ",
     Highlight:"That Inspire",
     },
