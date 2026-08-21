@@ -216,9 +216,9 @@ const Footer = () => {
             </span>
 
             <p>
-              2026 D Square
+              All rights reserved- D Square Construction
               <br />
-              All rights reserved. - Sun Innovation Web Tech
+              Designed by- Sun Innovation Web Tech
             </p>
 
           </div>
