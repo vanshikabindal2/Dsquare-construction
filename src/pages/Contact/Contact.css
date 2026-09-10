@@ -992,3 +992,182 @@ height: 70px;
   }
 
 }
+
+
+
+
+/* =========================================================
+   GET IN TOUCH — PREMIUM GRADIENT FORM
+========================================================= */
+
+.contact-form {
+    position: relative;
+    overflow: hidden;
+
+    padding: 48px;
+    margin-top: 50px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(11, 37, 60, 0.12);
+
+    box-shadow:
+        0 25px 70px rgba(11, 37, 60, 0.10);
+
+    animation: fadeRight 0.9s ease forwards;
+}
+
+
+/* =========================================================
+   HUGE GOLD GRADIENT — RIGHT SIDE
+========================================================= */
+
+.contact-form::before {
+    content: "";
+
+    position: absolute;
+
+    top: -35%;
+    right: -25%;
+
+    width: 75%;
+    height: 170%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(245, 180, 0, 0.32) 0%,
+        rgba(245, 180, 0, 0.20) 25%,
+        rgba(245, 180, 0, 0.10) 48%,
+        rgba(245, 180, 0, 0.04) 68%,
+        transparent 82%
+    );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   HUGE NAVY GRADIENT — RIGHT SIDE
+========================================================= */
+
+.contact-form::after {
+    content: "";
+
+    position: absolute;
+
+    top: -30%;
+    right: -35%;
+
+    width: 65%;
+    height: 160%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(11, 37, 60, 0.28) 0%,
+        rgba(11, 37, 60, 0.18) 25%,
+        rgba(11, 37, 60, 0.09) 48%,
+        rgba(11, 37, 60, 0.03) 68%,
+        transparent 84%
+    );
+
+    filter: blur(42px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   KEEP FORM CONTENT ABOVE GRADIENT
+========================================================= */
+
+.contact-form > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GOLD TOP ACCENT
+========================================================= */
+
+.contact-form .form-label {
+    color: #b08a48;
+}
+
+
+/* =========================================================
+   GET IN TOUCH HEADING
+========================================================= */
+
+.contact-form h3 {
+    color: #0b253c;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #f5b400;
+    box-shadow: 0 1px 0 #f5b400;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.contact-form button {
+    background: #0b253c;
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(
+        90deg,
+        #f5b400 0%,
+        #d99c00 45%,
+        #0b253c 100%
+    );
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(11, 37, 60, 0.20);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-form {
+        padding: 32px 22px;
+    }
+
+    .contact-form::before {
+        width: 100%;
+        right: -55%;
+    }
+
+    .contact-form::after {
+        width: 90%;
+        right: -55%;
+    }
+}

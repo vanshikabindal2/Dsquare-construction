@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Hero1 from '../../assets/Hero1.avif'
 import hero2 from '../../assets/hero2.avif'
 import h from '../../assets/h.avif'
-
+import Building from '../../assets/Building.svg'
 import './Home.css'
 const slides=[
   {image:Hero1,
@@ -166,6 +166,7 @@ const Home = () => {
             <Link to="/about" className="learn-more">
               Learn More About Us
               <span>→</span>
+              <img src={Building} alt="Construction team"/>
             </Link>
 
           </div>

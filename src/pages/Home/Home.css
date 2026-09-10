@@ -325,27 +325,97 @@ main {
    INTRO SECTION
 ========================================================= */
 
+/* =========================================
+   INTRO SECTION
+========================================= */
+
 .intro-section {
+  width: 100%;
+  padding: 110px 40px;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   INTRO CONTAINER
+========================================= */
+.intro-section {
+  position: relative;
   width: 100%;
 
   padding: 110px 40px;
 
   background: #ffffff;
+
+  overflow: hidden;
+  isolation: isolate;
 }
 
+
+/* =========================================
+   RIGHT SIDE SOFT NAVY + GOLD GLOW
+========================================= */
+
+.intro-section {
+  position: relative;
+  width: 100%;
+
+  padding: 110px 40px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* =========================================
+   RIGHT SIDE SOFT NAVY + GOLD GLOW
+========================================= */
+
+.intro-section::after {
+  content: "";
+
+  position: absolute;
+
+  right: -420px;
+  top: -280px;
+
+  width: 900px;
+  height: 900px;
+
+  background:
+    radial-gradient(
+      circle at 55% 50%,
+      rgba(245, 180, 0, 0.55) 0%,
+      rgba(245, 180, 0, 0.35) 20%,
+      rgba(11, 37, 60, 0.25) 43%,
+      rgba(11, 37, 60, 0.12) 60%,
+      transparent 75%
+    );
+
+  filter: blur(25px);
+
+  z-index: -1;
+
+  pointer-events: none;
+}
 .intro-container {
   width: 100%;
   max-width: 1200px;
-
   margin: 0 auto;
 
   display: grid;
   grid-template-columns: 1fr 0.8fr;
 
   gap: 100px;
-
   align-items: center;
 }
+
+
+/* =========================================
+   LEFT HEADING
+========================================= */
 
 .section-heading {
   max-width: 620px;
@@ -358,8 +428,8 @@ main {
 
   font-size: 12px;
   font-weight: 800;
-
   letter-spacing: 2.5px;
+
   text-transform: uppercase;
 }
 
@@ -371,7 +441,6 @@ main {
 
   font-size: clamp(38px, 4vw, 58px);
   line-height: 1.08;
-
   letter-spacing: -1.5px;
 }
 
@@ -379,6 +448,11 @@ main {
 .services-heading h2 span {
   color: #f5b400;
 }
+
+
+/* =========================================
+   RIGHT INTRO TEXT
+========================================= */
 
 .intro-text {
   padding-left: 35px;
@@ -395,10 +469,17 @@ main {
   line-height: 1.9;
 }
 
+
+/* =========================================
+   LEARN MORE
+========================================= */
+
 .learn-more {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 12px;
+
+  width: 100%;
+  min-height: 90px;
 
   color: #161616;
 
@@ -407,16 +488,163 @@ main {
 
   text-decoration: none;
 
-  transition: gap 0.3s ease;
+  white-space: nowrap;
 }
 
-.learn-more span {
+
+/* =========================================
+   LEARN MORE TEXT
+========================================= */
+
+.learn-more .learn-text {
+  color: #161616;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.learn-more .learn-arrow {
+  margin-left: 22px;
+
   color: #f5b400;
+
   font-size: 20px;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
 }
 
-.learn-more:hover {
-  gap: 18px;
+
+/* =========================================
+   BUILDING IMAGE
+========================================= */
+
+.learn-more img {
+  width: 290px;
+  height: auto;
+
+  object-fit: contain;
+
+  margin-left: auto;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.learn-more:hover .learn-arrow {
+  transform: translateX(5px);
+}
+
+.learn-more:hover img {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .intro-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .intro-section {
+    padding: 90px 30px;
+  }
+
+  .learn-more img {
+    width: 100px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .intro-section {
+    padding: 70px 22px;
+  }
+
+  .intro-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .section-heading {
+    max-width: 100%;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(38px, 10vw, 50px);
+  }
+
+  .intro-text {
+    padding-left: 22px;
+  }
+
+  .intro-text p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .learn-more {
+    min-height: 80px;
+  }
+
+  .learn-more img {
+    width: 90px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .intro-section {
+    padding: 60px 18px;
+  }
+
+  .intro-text {
+    padding-left: 18px;
+  }
+
+  .learn-more {
+    font-size: 13px;
+  }
+
+  .learn-more .learn-arrow {
+    margin-left: 14px;
+    font-size: 18px;
+  }
+
+  .learn-more img {
+    width: 75px;
+  }
+
 }
 
 /* =========================================================

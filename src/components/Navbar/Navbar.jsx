@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from '../../assets/logo.png'
+import Construction from '../../assets/Construction.svg'
+
 const Navbar = () => {
     const [menuOpen, setMenuOpen]=useState(false);
 
@@ -31,6 +33,11 @@ const Navbar = () => {
                 {/* <NavLink to="/contact" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Contact</NavLink> */}
                 
                 <NavLink to="/contact" onClick={closeMenu} className="quote-button">Contact <span></span></NavLink>
+                 <img
+            src={Construction}
+            alt="Construction"
+            className="construction-icon"
+        />
             </nav>
 
             
