@@ -196,6 +196,7 @@ const Home = () => {
             <Link to="/services" className="view-all">
               View All Services →
             </Link>
+    {/* #c1cedf; */}
 
           </div>
 

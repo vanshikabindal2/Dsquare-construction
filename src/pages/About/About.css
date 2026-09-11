@@ -125,7 +125,8 @@
             rgba(11, 37, 60, 0.04) 43%,
             transparent 65%
         ),
-        #f5f4f0;
+           #c1cedf;
+
     overflow: hidden;
 }
 
@@ -609,7 +610,6 @@
             transparent 68%
         ),
         #f5f4f0;
-
     overflow: hidden;
 }
 

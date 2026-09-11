@@ -72,7 +72,7 @@
 
 .logo img {
     width: 100%;
-    height: 16vh;
+    height: 19vh;
 
     object-fit: contain;
     display: block;
@@ -367,8 +367,8 @@
 
 
     .logo img {
-        width: 120px;
-        height: 55px;
+        width: 150px;
+        height: 90px;
 
         object-fit: contain;
     }
@@ -453,3 +453,6 @@
         0 6px 8px rgba(11, 37, 60, 0.18)
     );
 }
+
+
+

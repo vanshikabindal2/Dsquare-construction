@@ -325,45 +325,31 @@ main {
    INTRO SECTION
 ========================================================= */
 
-/* =========================================
-   INTRO SECTION
-========================================= */
 
-.intro-section {
+/* .intro-section {
   width: 100%;
   padding: 110px 40px;
   background: #ffffff;
-}
+} */
 
-
-/* =========================================
-   INTRO CONTAINER
-========================================= */
-.intro-section {
-  position: relative;
-  width: 100%;
-
-  padding: 110px 40px;
-
-  background: #ffffff;
-
-  overflow: hidden;
-  isolation: isolate;
-}
 
 
 /* =========================================
    RIGHT SIDE SOFT NAVY + GOLD GLOW
 ========================================= */
 
+/* =========================================
+   INTRO SECTION
+========================================= */
+
 .intro-section {
   position: relative;
   width: 100%;
 
   padding: 110px 40px;
 
-  background: #ffffff;
-
+  /* background: #c1cedf; */
+background: #ced9e7;
   overflow: hidden;
   isolation: isolate;
 }
@@ -400,15 +386,24 @@ main {
 
   pointer-events: none;
 }
+
+
+/* =========================================
+   INTRO CONTAINER
+========================================= */
+
 .intro-container {
   width: 100%;
   max-width: 1200px;
+
   margin: 0 auto;
 
   display: grid;
+
   grid-template-columns: 1fr 0.8fr;
 
   gap: 100px;
+
   align-items: center;
 }
 
@@ -428,6 +423,7 @@ main {
 
   font-size: 12px;
   font-weight: 800;
+
   letter-spacing: 2.5px;
 
   text-transform: uppercase;
@@ -440,13 +436,15 @@ main {
   color: #151515;
 
   font-size: clamp(38px, 4vw, 58px);
+
   line-height: 1.08;
+
   letter-spacing: -1.5px;
 }
 
 .section-heading h2 span,
 .services-heading h2 span {
-  color: #f5b400;
+  /* color: #ae985b; */color: #846109;
 }
 
 
@@ -463,9 +461,10 @@ main {
 .intro-text p {
   margin: 0 0 28px;
 
-  color: #666666;
+  color: #110909;
 
   font-size: 16px;
+
   line-height: 1.9;
 }
 
@@ -476,14 +475,17 @@ main {
 
 .learn-more {
   display: flex;
+
   align-items: center;
 
   width: 100%;
+
   min-height: 90px;
 
   color: #161616;
 
   font-size: 14px;
+
   font-weight: 700;
 
   text-decoration: none;
@@ -513,6 +515,7 @@ main {
   color: #f5b400;
 
   font-size: 20px;
+
   line-height: 1;
 
   transition: transform 0.3s ease;
@@ -525,6 +528,7 @@ main {
 
 .learn-more img {
   width: 290px;
+
   height: auto;
 
   object-fit: contain;
@@ -560,6 +564,7 @@ main {
 
   .intro-container {
     grid-template-columns: 1fr 1fr;
+
     gap: 60px;
   }
 
@@ -570,7 +575,6 @@ main {
   .learn-more img {
     width: 100px;
   }
-
 }
 
 
@@ -604,17 +608,25 @@ main {
 
   .intro-text p {
     font-size: 15px;
+
     line-height: 1.8;
   }
 
   .learn-more {
-    min-height: 80px;
+    min-height: 90px;
+
+    width: 100%;
   }
 
   .learn-more img {
-    width: 90px;
-  }
+    width: 120px;
 
+    height: auto;
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+  }
 }
 
 
@@ -633,38 +645,142 @@ main {
   }
 
   .learn-more {
+    width: 100%;
+
+    min-height: 100px;
+
     font-size: 13px;
+
+    display: flex;
+
+    align-items: center;
   }
 
   .learn-more .learn-arrow {
     margin-left: 14px;
+
     font-size: 18px;
   }
 
   .learn-more img {
-    width: 75px;
-  }
+    width: 120px !important;
 
+    height: auto;
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+  }
 }
 
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .intro-section {
+    padding: 55px 15px;
+  }
+
+  .intro-text {
+    padding-left: 15px;
+  }
+
+  .learn-more {
+    font-size: 12px;
+
+    min-height: 95px;
+  }
+
+  .learn-more .learn-arrow {
+    margin-left: 10px;
+
+    font-size: 17px;
+  }
+
+  .learn-more img {
+    width: 105px !important;
+  }
+}
 /* =========================================================
    SERVICES
+========================================================= */
+/* =========================================================
+   SERVICES SECTION
 ========================================================= */
 
 .services-preview {
   width: 100%;
-
   padding: 105px 40px;
 
-  background: #f6f6f4;
+  /* Soft blue-grey base */
+  background:
+    radial-gradient(
+      ellipse 55% 100% at 100% 50%,
+      rgba(245, 180, 0, 0.32) 0%,
+      rgba(245, 180, 0, 0.20) 28%,
+      rgba(245, 180, 0, 0.10) 48%,
+      rgba(245, 180, 0, 0.04) 65%,
+      transparent 82%
+    ),
+        #EDECE9;
+
+
+  position: relative;
+  overflow: hidden;
 }
+
+
+/* =========================================================
+   HUGE RIGHT GOLDEN GLOW
+========================================================= */
+
+.services-preview::before {
+  content: "";
+
+  position: absolute;
+
+  top: -15%;
+  right: -20%;
+
+  width: 55%;
+  height: 130%;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 180, 0, 0.20) 0%,
+    rgba(245, 180, 0, 0.12) 30%,
+    rgba(245, 180, 0, 0.05) 55%,
+    transparent 75%
+  );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .services-container {
   width: 100%;
   max-width: 1200px;
-
   margin: 0 auto;
+
+  position: relative;
+  z-index: 2;
 }
+
+
+/* =========================================================
+   HEADING
+========================================================= */
 
 .services-heading {
   display: flex;
@@ -676,6 +792,11 @@ main {
   margin-bottom: 55px;
 }
 
+
+/* =========================================================
+   VIEW ALL
+========================================================= */
+
 .view-all {
   display: inline-flex;
   align-items: center;
@@ -686,15 +807,18 @@ main {
   font-weight: 700;
 
   text-decoration: none;
-
   white-space: nowrap;
 
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .view-all:hover {
-  color: #f5b400;
+  color: #b98500;
+  transform: translateX(3px);
 }
+
 
 /* =========================================================
    SERVICE CARDS
@@ -708,6 +832,11 @@ main {
   gap: 22px;
 }
 
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
 .service-card {
   position: relative;
 
@@ -717,7 +846,7 @@ main {
 
   background: #ffffff;
 
-  border: 1px solid #e9e9e9;
+  border: 1px solid rgba(0, 0, 0, 0.07);
 
   overflow: hidden;
 
@@ -727,17 +856,55 @@ main {
     background 0.35s ease;
 }
 
+
+/* Subtle gold line */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: #f5b400;
+
+  transition: width 0.4s ease;
+}
+
+.service-card:hover::before {
+  width: 100%;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
 .service-card:hover {
   transform: translateY(-8px);
 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.10);
 }
+
+
+/* =========================================================
+   FEATURED CARD
+========================================================= */
 
 .service-card.featured {
   background: #171717;
-
   color: #ffffff;
 }
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
 
 .service-number {
   position: absolute;
@@ -745,7 +912,7 @@ main {
   top: 25px;
   right: 28px;
 
-  color: #d7d7d7;
+  color: #bdbdbd;
 
   font-size: 13px;
   font-weight: 700;
@@ -754,6 +921,11 @@ main {
 .service-card.featured .service-number {
   color: rgba(255, 255, 255, 0.35);
 }
+
+
+/* =========================================================
+   ICON
+========================================================= */
 
 .service-icon {
   width: 60px;
@@ -772,7 +944,26 @@ main {
   font-size: 27px;
 
   border-radius: 50%;
+
+  box-shadow:
+    0 8px 22px rgba(245, 180, 0, 0.20);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+.service-card:hover .service-icon {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 12px 28px rgba(245, 180, 0, 0.28);
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
 
 .service-card h3 {
   max-width: 250px;
@@ -789,18 +980,29 @@ main {
   color: #ffffff;
 }
 
+
+/* =========================================================
+   CARD PARAGRAPH
+========================================================= */
+
 .service-card p {
   margin: 0 0 28px;
 
   color: #777777;
 
   font-size: 14px;
+
   line-height: 1.8;
 }
 
 .service-card.featured p {
   color: rgba(255, 255, 255, 0.65);
 }
+
+
+/* =========================================================
+   LEARN MORE
+========================================================= */
 
 .service-card a {
   color: #171717;
@@ -809,6 +1011,10 @@ main {
   font-weight: 700;
 
   text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .service-card.featured a {
@@ -816,7 +1022,103 @@ main {
 }
 
 .service-card a:hover {
+  color: #b98500;
   text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .services-preview {
+    padding: 90px 30px;
+  }
+
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .services-preview {
+    padding: 75px 18px;
+
+    background:
+      radial-gradient(
+        ellipse 90% 70% at 100% 50%,
+        rgba(245, 180, 0, 0.24) 0%,
+        rgba(245, 180, 0, 0.12) 38%,
+        transparent 75%
+      ),
+      #edece9;
+  }
+
+  .services-preview::before {
+    right: -45%;
+    width: 90%;
+    height: 120%;
+  }
+
+  .services-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 40px;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .service-card {
+    min-height: auto;
+
+    padding: 35px 27px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .services-preview {
+    padding: 65px 15px;
+  }
+
+  .service-card {
+    padding: 32px 23px;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+
+    margin-bottom: 38px;
+  }
+
+  .service-card h3 {
+    font-size: 21px;
+  }
+
 }
 
 /* =========================================================

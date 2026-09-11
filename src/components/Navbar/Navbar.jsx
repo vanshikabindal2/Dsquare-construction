@@ -33,11 +33,13 @@ const Navbar = () => {
                 {/* <NavLink to="/contact" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Contact</NavLink> */}
                 
                 <NavLink to="/contact" onClick={closeMenu} className="quote-button">Contact <span></span></NavLink>
-                 <img
-            src={Construction}
-            alt="Construction"
-            className="construction-icon"
-        />
+                <div className="construction-wrapper">
+    <img
+        src={Construction}
+        alt="Construction"
+        className="construction-icon"
+    />
+</div>
             </nav>
 
             
