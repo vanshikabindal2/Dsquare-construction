@@ -1,0 +1,60 @@
+.bp {
+  --bp-bg: #ece7d8;
+  --bp-ink: #2b2b28;
+  --bp-yellow: #ffc20e;
+
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bp-bg); color: var(--bp-ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding: 24px;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+@media (prefers-color-scheme: dark) {
+  .bp { --bp-bg: #1f1f1d; --bp-ink: #f3efe4; }
+}
+
+.bp--hide { opacity: 0; visibility: hidden; }
+
+/* yellow-black caution tape at top and bottom */
+.bp::before, .bp::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 16px;
+  background: repeating-linear-gradient(-45deg, var(--bp-yellow) 0 16px, #222 16px 32px);
+}
+.bp::before { top: 0; }
+.bp::after { bottom: 0; }
+
+.bp-svg { width: min(320px, 80vw); height: auto; overflow: visible; }
+
+.bp-s { stroke: #222; stroke-linejoin: round; stroke-linecap: round; stroke-width: 2.5; }
+
+/* bricks drop in one by one */
+.bp-bk {
+  opacity: 0; transform: translateY(-34px); transform-box: fill-box;
+  transition: opacity 0.2s, transform 0.3s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+.bp-bk.on { opacity: 1; transform: none; }
+
+/* roof, chimney, flag drop in */
+.bp-x {
+  opacity: 0; transform: translateY(-26px); transform-box: fill-box;
+  transition: opacity 0.35s, transform 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+.bp-x.on { opacity: 1; transform: none; }
+
+/* door and windows fade in */
+.bp-f { opacity: 0; transition: opacity 0.5s; }
+.bp-f.on { opacity: 1; }
+
+/* windows light up at 100% */
+.bp-win { transition: opacity 0.5s, fill 0.6s; }
+.bp-win.lit { fill: #ffe27a; }
+
+.bp-pct { font-size: 2.6rem; font-weight: 900; letter-spacing: 0.04em; line-height: 1; }
+.bp--done .bp-pct { color: #c4552d; }
+.bp-msg { font-size: 0.95rem; opacity: 0.75; min-height: 1.2em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bp, .bp-bk, .bp-x, .bp-f, .bp-win { transition: none !important; }
+}
+

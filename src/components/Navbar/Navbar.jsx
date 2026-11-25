@@ -1,57 +1,94 @@
-import React from 'react'
-import { useState } from 'react';
+
+
+
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logo from '../../assets/logo.png'
-import Construction from '../../assets/Construction.svg'
+
+import logo from "../../assets/logo.png";
+import Construction from "../../assets/Construction.svg";
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen]=useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const closeMenu=()=>{
-        setMenuOpen(false);
-    };
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <header className='navbar'>
-        <div className='nav-container'>
+    <header className="navbar">
+      <div className="nav-container">
 
-            
-            <NavLink to="/" className="logo" onClick={closeMenu}>
-                    <img src={logo} alt="Vanshika Construction Logo" />
-                </NavLink>
-            
+        <NavLink to="/" className="logo" onClick={closeMenu}>
+          <img src={logo} alt="Vanshika Construction Logo" />
+        </NavLink>
 
-            
-            <nav className={`nav-menu ${menuOpen ? "active" : ""}`}>
+        <nav className={`nav-menu ${menuOpen ? "active" : ""}`}>
 
-                <NavLink to="/" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Home</NavLink>
-                <NavLink to="/about" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>About Us</NavLink>
-                <NavLink to="/services" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Services</NavLink>
-                <NavLink to="/projects" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Projects</NavLink>
-                <NavLink to="/why-us" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Why Us</NavLink>
-                {/* <NavLink to="/contact" onClick={closeMenu} className={({isActive})=>isActive ?"nav-link active" :"nav-link"}>Contact</NavLink> */}
-                
-                <NavLink to="/contact" onClick={closeMenu} className="quote-button">Contact <span></span></NavLink>
-                <div className="construction-wrapper">
-    <img
-        src={Construction}
-        alt="Construction"
-        className="construction-icon"
-    />
-</div>
-            </nav>
+          <NavLink to="/" onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Home
+          </NavLink>
 
-            
-            <button className={`menu-toggle ${menuOpen ?"open": ""}`} onClick={()=>setMenuOpen(!menuOpen)} aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+          <NavLink to="/about" onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            About Us
+          </NavLink>
 
-        </div>
+          <NavLink to="/services" onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Services
+          </NavLink>
+
+          <NavLink to="/projects" onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Projects
+          </NavLink>
+
+          <NavLink to="/why-us" onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Why Us
+          </NavLink>
+
+          <NavLink to="/contact" onClick={closeMenu}
+            className="quote-button">
+            Contact <span></span>
+          </NavLink>
+
+          <div className="construction-wrapper">
+            <img
+              src={Construction}
+              alt="Construction"
+              className="construction-icon"
+            />
+          </div>
+
+        </nav>
+
+        <button
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

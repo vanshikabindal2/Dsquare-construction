@@ -1,0 +1,80 @@
+/* =========================================
+   HELICOPTER CANVAS (bricks, dust, smoke)
+========================================= */
+.hc-bricks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+/* =========================================
+   HELICOPTER
+   (width/height are set from JS: 90px on desktop, 64px on small screens)
+========================================= */
+.hc-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 1002;
+  will-change: transform;
+}
+
+.hc-cursor svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hc-s {
+  stroke: #222;
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* Rotor blades: squash on X to fake a spinning blade */
+.hc-prop {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hc-prop 0.07s linear infinite alternate;
+}
+.hc-cursor.away .hc-prop {
+  animation-duration: 0.03s;
+}
+@keyframes hc-prop {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0.2); }
+}
+
+/* Gentle hover bob */
+.hc-bob {
+  animation: hc-bob 0.5s ease-in-out infinite alternate;
+}
+@keyframes hc-bob {
+  from { transform: translateY(0); }
+  to   { transform: translateY(2px); }
+}
+
+/* Brick swinging on its rope */
+.hc-sway {
+  transform-origin: 40px 46px;
+  animation: hc-sway 1s ease-in-out infinite alternate;
+}
+@keyframes hc-sway {
+  from { transform: rotate(-7deg); }
+  to   { transform: rotate(7deg); }
+}
+
+/* Accessibility: keep the rotor, stop the rest */
+@media (prefers-reduced-motion: reduce) {
+  .hc-bob,
+  .hc-sway {
+    animation: none !important;
+  }
+}

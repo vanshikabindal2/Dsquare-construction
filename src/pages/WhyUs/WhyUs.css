@@ -21,7 +21,8 @@
 background: #c3cbdb;
     min-height: 70vh;
 
-    padding: 120px 8%;
+    /* padding: 120px 8%; */
+  padding: 40px 40px 70px;
 
     display: flex;
     justify-content: space-between;

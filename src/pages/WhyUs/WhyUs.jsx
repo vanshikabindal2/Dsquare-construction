@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./WhyUs.css";
-
+import Whyhero from "../Whyhero/Whyhero";
 /* =========================================================
    COUNTER COMPONENT
 ========================================================= */
@@ -68,40 +68,14 @@ const Counter = ({ end, suffix }) => {
 
 const WhyUs = () => {
   return (
+    <>
+    <Whyhero/>
     <div className="why-page">
 
       {/* =====================================================
           INTRO SECTION
       ===================================================== */}
 
-      <section className="why-intro">
-
-        <div className="why-intro-left">
-
-          <span className="why-label">
-            Why D Square
-          </span>
-
-          <h1>
-            Built with
-            <br />
-            <span>purpose.</span>
-          </h1>
-
-        </div>
-
-        <div className="why-intro-right">
-
-          <p>
-            We believe good construction is more than just
-            building structures. It is about creating spaces
-            that are thoughtfully designed, carefully built,
-            and made to last for generations.
-          </p>
-
-        </div>
-
-      </section>
 
 
       {/* =====================================================
@@ -399,6 +373,7 @@ const WhyUs = () => {
       </section>
 
     </div>
+    </>
   );
 };
 

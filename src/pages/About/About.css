@@ -13,6 +13,7 @@
     background: #f5f4f0;
     color: #171717;
     font-family: inherit;
+
 }
 
 .about-container {
@@ -116,7 +117,9 @@
 
 .about-intro {
     position: relative;
-    padding: 140px 0;
+    /* padding: 140px 0; */
+      padding: 40px 40px 70px;
+
     background:
         radial-gradient(
             circle at 0% 50%,
@@ -446,8 +449,9 @@
     background: #171717;
 
     color: white;
+  padding: 40px 40px 70px;
 
-    padding: 130px 0;
+    /* padding: 130px 0; */
 }
 
 .mission-heading {
@@ -600,7 +604,8 @@
 
 .values-section {
     position: relative;
-    padding: 140px 0;
+    /* padding: 140px 0; */
+     padding: 40px 40px 70px;
     background:
         radial-gradient(
             circle at 100% 50%,
@@ -925,6 +930,7 @@
 
     .values-section {
         padding: 65px 20px;
+         /* padding: 40px 40px 70px; */
     }
 
     .values-heading {

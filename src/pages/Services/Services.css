@@ -98,7 +98,9 @@
 
 .services-intro {
     position: relative;
-    padding: 130px 0;
+    /* padding: 130px 0; */
+      padding: 40px 40px 70px;
+
     background: #f5f4f0;
     overflow: hidden;
 }
@@ -520,8 +522,9 @@ color: #171717;
     background: #171717;
 
     color: white;
+  padding: 40px 40px 70px;
 
-    padding: 130px 0;
+    /* padding: 130px 0; */
 }
 
 

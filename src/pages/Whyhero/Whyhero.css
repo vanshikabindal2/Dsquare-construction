@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+/* Colours match the D Square site: blue-grey hero, navy text, gold accent, cream below.
+   Change only these 7 values to re-theme the whole section. */
+.wu2 {
+  --hero-bg: #c3cada;   /* same blue-grey as your current hero */
+  --sky: #98a5bd;       /* skyline blocks (slightly darker than hero) */
+  --page-bg: #f3f2ee;   /* cream section below */
+  --navy: #0d2a47;
+  --muted: #3b4d63;
+  --gold: #b87a1f;
+  --edge: rgba(13, 42, 71, 0.18);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--navy);
+}
+
+.wu2-hero {
+  position: relative; min-height: 80vh; overflow: hidden;
+  display: flex; align-items: center; background: var(--hero-bg);
+}
+.wu2-inner {
+  position: relative; z-index: 2;
+  width: min(1240px, 100% - 48px); margin-inline: auto;
+  padding: 72px 0 220px;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: end;
+}
+.wu2-title {
+  margin: 0; color: var(--navy);
+  font: 800 clamp(3.4rem, 10vw, 9rem) / 0.88 "Bricolage Grotesque", sans-serif;
+  letter-spacing: -0.045em;
+}
+.wu2-title em { display: block; font-style: normal; color: var(--gold); }
+.wu2-lead { margin: 0 0 10px; max-width: 36ch; font-size: 1.1rem; line-height: 1.75; color: var(--muted); }
+.wu2-lead strong { color: var(--navy); font-weight: 600; }
+
+/* skyline: blocks rise once on load */
+.wu2-sky {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: 1;
+  display: flex; align-items: flex-end; gap: 6px;
+  padding-inline: max(0px, calc((100% - 1240px) / 2));
+}
+.wu2-sky i {
+  flex: 1; height: var(--h); transform-origin: bottom;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 10px, var(--hero-bg) 10px 12px),
+    repeating-linear-gradient(0deg, transparent 0 14px, var(--hero-bg) 14px 16px),
+    var(--sky);
+  animation: wu2-grow 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i) * 70ms);
+}
+.wu2-sky i.g {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 10px, var(--hero-bg) 10px 12px),
+    repeating-linear-gradient(0deg, transparent 0 14px, var(--hero-bg) 14px 16px),
+    var(--gold);
+}
+@keyframes wu2-grow { from { transform: scaleY(0); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .wu2-sky i { animation: none; } }
+
+.wu2-tape {
+  height: 18px; position: relative; z-index: 2;
+  background: repeating-linear-gradient(-45deg, var(--gold) 0 18px, var(--navy) 18px 36px);
+}
+
+/* brick trail (bricks are added by the component) */
+.wu2-brick {
+  position: absolute; z-index: 3; width: 38px; height: 17px; pointer-events: none; border-radius: 2px;
+  background: linear-gradient(90deg, transparent 18px, rgba(0,0,0,.35) 18px 19px, transparent 19px), var(--c);
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.25);
+}
+@media (pointer: fine) { .wu2-hero { cursor: crosshair; } }
+
+/* process section */
+.wu2-work { background: var(--page-bg); padding: 88px max(24px, calc((100% - 1240px) / 2)); }
+.wu2-work h2 { margin: 0 0 48px; max-width: 16ch; color: var(--navy); font: 800 clamp(2rem, 4.5vw, 3.4rem) / 1 "Bricolage Grotesque", sans-serif; letter-spacing: -0.03em; }
+.wu2-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); counter-reset: s; }
+.wu2-steps li { counter-increment: s; padding: 0 28px 8px 22px; border-left: 2px solid var(--edge); }
+.wu2-steps li::before { content: counter(s); display: block; margin-bottom: 14px; color: var(--gold); font: 800 3.2rem / 1 "Bricolage Grotesque", sans-serif; }
+.wu2-steps h3 { margin: 0 0 8px; font-size: 1.15rem; color: var(--navy); }
+.wu2-steps p { margin: 0; max-width: 30ch; line-height: 1.65; color: var(--muted); }
+
+@media (max-width: 800px) { .wu2-inner { grid-template-columns: 1fr; padding-bottom: 200px; } }

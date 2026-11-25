@@ -1,36 +1,40 @@
+/* REMOVE TOP EXTRA SPACE */
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
 /* =========================================
    NAVBAR
 ========================================= */
 
 .navbar {
     width: 100%;
-    background: rgba(255, 255, 255, 0.96);
+    height: auto;
+
+    background: #ffffff;
     border-bottom: 1px solid #eeeeee;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    backdrop-filter: blur(12px);
-
-    animation: navReveal 0.8s ease forwards;
+    /* No entry animation */
+    animation: none;
+    transform: none;
+    opacity: 1;
 }
-
-
-/* Navbar entry animation */
-
-@keyframes navReveal {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 
 .nav-container {
     max-width: 1200px;
@@ -43,7 +47,6 @@
     justify-content: space-between;
 }
 
-
 /* =========================================
    LOGO
 ========================================= */
@@ -52,124 +55,83 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-
-    animation: logoReveal 0.9s ease forwards;
+    flex-shrink: 0;
 }
-
-
-@keyframes logoReveal {
-    from {
-        opacity: 0;
-        transform: translateX(-35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 
 .logo img {
-    width: 100%;
-    height: 19vh;
+    width: 180px;
+    height: 75px;
 
     object-fit: contain;
     display: block;
 
-    transition: transform 0.4s ease;
+    transition: none;
 }
-
-
-/* Logo hover */
 
 .logo:hover img {
-    transform: scale(1.05);
+    transform: none;
 }
 
-
 /* =========================================
-   NAVIGATION
+   NAVIGATION MENU
 ========================================= */
 
 .nav-menu {
     display: flex;
     align-items: center;
     gap: 30px;
-
-    animation: menuReveal 1s ease forwards;
 }
 
-
-@keyframes menuReveal {
-    from {
-        opacity: 0;
-        transform: translateY(-15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* NAV LINKS */
+/* Navigation Links */
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: #333333;
 
     font-size: 14px;
     font-weight: 500;
 
     position: relative;
 
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: color 0.2s ease;
+    transform: none;
 }
 
-
-/* Hover lift */
+/* Simple Hover */
 
 .nav-link:hover {
     color: #d89b32;
-    transform: translateY(-3px);
+    transform: none;
 }
-
 
 .nav-link.active {
     color: #d89b32;
 }
 
-
-/* Animated underline */
+/* Smooth Underline */
 
 .nav-link::after {
     content: "";
 
     position: absolute;
+    left: 0;
+    bottom: -7px;
 
-    left: 50%;
-    bottom: -8px;
-
-    width: 0;
+    width: 100%;
     height: 2px;
 
     background: #d89b32;
 
-    transform: translateX(-50%);
+    transform: scaleX(0);
+    transform-origin: center;
 
-    transition: width 0.35s ease;
+    transition: transform 0.2s ease;
 }
-
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: 100%;
+    transform: scaleX(1);
 }
-
 
 /* =========================================
    CONTACT BUTTON
@@ -186,56 +148,26 @@
     font-size: 13px;
     font-weight: 600;
 
+    display: inline-flex;
+    align-items: center;
+
     position: relative;
-    overflow: hidden;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    transition: background-color 0.2s ease;
+
+    transform: none;
+    box-shadow: none;
 }
-
-
-/* Shiny overlay */
-
-.quote-button::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 70%;
-    height: 100%;
-
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.35),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    transition: left 0.6s ease;
-}
-
-
-.quote-button:hover::before {
-    left: 140%;
-}
-
 
 .quote-button:hover {
     background: #0b253c;
+    color: #ffffff;
 
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 25px rgba(11, 37, 60, 0.22);
+    transform: none;
+    box-shadow: none;
 }
 
+/* Arrow */
 
 .quote-button span {
     display: inline-block;
@@ -243,24 +175,45 @@
     width: 7px;
     height: 7px;
 
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
 
     transform: rotate(45deg);
+    margin-left: 9px;
 
-    margin-left: 8px;
-
-    transition: transform 0.3s ease;
+    transition: none;
 }
-
 
 .quote-button:hover span {
-    transform: rotate(45deg) translate(3px, -3px);
+    transform: rotate(45deg);
 }
 
+/* =========================================
+   CONSTRUCTION ICON
+========================================= */
+
+.construction-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.construction-icon {
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+    display: block;
+
+    transition: none;
+}
+
+.construction-wrapper:hover .construction-icon {
+    transform: none;
+    filter: none;
+}
 
 /* =========================================
-   MOBILE MENU
+   MOBILE MENU BUTTON
 ========================================= */
 
 .menu-toggle {
@@ -270,10 +223,8 @@
     border: none;
 
     cursor: pointer;
-
     padding: 5px;
 }
-
 
 .menu-toggle span {
     display: block;
@@ -283,16 +234,28 @@
 
     background: #0b253c;
 
-    margin: 5px 0;
+    margin: 6px 0;
 
-    transition:
-        transform 0.35s ease,
-        opacity 0.3s ease;
+    transition: transform 0.25s ease,
+                opacity 0.25s ease;
 }
 
+/* Hamburger Animation */
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
 /* =========================================
-   TABLET / MOBILE
+   TABLET AND MOBILE
 ========================================= */
 
 @media (max-width: 900px) {
@@ -309,85 +272,82 @@
 
         width: 100%;
 
-        background: rgba(255, 255, 255, 0.98);
+        background: #ffffff;
 
+        display: flex;
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
 
-        padding: 0;
+        gap: 22px;
 
         max-height: 0;
-        overflow: hidden;
+        padding: 0;
 
+        overflow: hidden;
         opacity: 0;
+        visibility: hidden;
 
         border-bottom: 1px solid transparent;
 
         transition:
-            max-height 0.5s ease,
-            opacity 0.4s ease,
-            padding 0.5s ease;
+            max-height 0.35s ease,
+            opacity 0.25s ease,
+            padding 0.35s ease,
+            visibility 0.25s ease;
     }
 
-
     .nav-menu.active {
-        display: flex;
-
         max-height: 500px;
 
-        opacity: 1;
+        padding: 28px 0;
 
-        padding: 30px 0;
+        opacity: 1;
+        visibility: visible;
 
         border-bottom: 1px solid #eeeeee;
     }
-
 
     .menu-toggle {
         display: block;
     }
 
-
     .quote-button {
         margin-top: 5px;
     }
+
+    .construction-icon {
+        width: 40px;
+        height: 40px;
+    }
 }
 
-
 /* =========================================
-   MOBILE
+   SMALL MOBILE
 ========================================= */
 
 @media (max-width: 500px) {
 
     .nav-container {
-        padding: 0 18px;
         height: 75px;
+        padding: 0 18px;
     }
-
 
     .logo img {
         width: 150px;
-        height: 90px;
-
-        object-fit: contain;
+        height: 65px;
     }
-
 
     .nav-menu {
         top: 75px;
     }
 
-
     .menu-toggle span {
         width: 24px;
-        height: 2px;
     }
 }
 
-
 /* =========================================
-   REDUCE MOTION ACCESSIBILITY
+   ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -395,64 +355,8 @@
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }
-
-
-
-/* =========================================
-   CONTACT + CONSTRUCTION IMAGE
-========================================= */
-
-.contact-area {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-
-    animation: contactReveal 1s ease forwards;
-}
-
-
-@keyframes contactReveal {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
-/* Construction SVG */
-
-.construction-icon {
-    width: 50px;
-    height: 50px;
-
-    object-fit: contain;
-
-    display: block;
-
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
-}
-
-
-/* Image hover */
-
-.contact-area:hover .construction-icon {
-    transform: translateY(-4px) rotate(-2deg);
-
-    filter: drop-shadow(
-        0 6px 8px rgba(11, 37, 60, 0.18)
-    );
-}
-
-
-

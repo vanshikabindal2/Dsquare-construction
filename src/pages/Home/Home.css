@@ -341,15 +341,11 @@ main {
 /* =========================================
    INTRO SECTION
 ========================================= */
-
 .intro-section {
   position: relative;
   width: 100%;
-
-  padding: 110px 40px;
-
-  /* background: #c1cedf; */
-background: #ced9e7;
+  padding: 40px 40px 70px;
+  background: #ced9e7;
   overflow: hidden;
   isolation: isolate;
 }
@@ -715,7 +711,8 @@ background: #ced9e7;
 
 .services-preview {
   width: 100%;
-  padding: 105px 40px;
+  /* padding: 105px 40px; */
+  padding: 40px 40px 70px;
 
   /* Soft blue-grey base */
   background:
