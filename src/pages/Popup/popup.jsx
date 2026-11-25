@@ -60,7 +60,7 @@ const Popup = () => {
     const formData = new FormData(e.currentTarget);
 
     // Web3Forms Access Key
-    formData.append("access_key", "c9ae9c54-fe80-41bd-9b0a-06c00131cb47");
+    formData.append("access_key", "c5717c2e-198e-441b-9aab-c2e1395a7fd1");
 
     formData.append("subject", "New Website Enquiry");
     formData.append("from_name", "Website Enquiry");
